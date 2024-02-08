@@ -14,6 +14,7 @@ graph TD;
     C-->D[for every person in names];
     D-->E{Table.has_free_spots};
     E-- True --> G[NO MORE TABLES FREE];
+    G --> X[END]
     E-- No --> F[YES];
     F-->H[Openspace.organize];
 
@@ -24,10 +25,10 @@ graph TD;
 
 ```mermaid
 graph TD;
-    A{is table nr == 6} -- YES --> B[OUT OF TABLES]
+    A{is table_nr == 7} -- YES --> B[OUT OF TABLES]
     B --> X[END]
-    A -- NO --> C[seatnr + 1]
-    C --> D{is seat nr == 4}
+    A -- NO --> C[table_nr + 1]
+    C --> D{is seat_nr == 5}
     D -- NO --> E[seatnr + 1]
     D -- YES --> F[OUT OF SEATS]
     F --> A
