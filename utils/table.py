@@ -28,18 +28,6 @@ class Seat():
         self.occupant = None
         self.free = True
 
-
-# def test_seat_methods():
-#     # # Create a seat with no occupant
-#     seat = Seat(free=True, occupant=None)
-#     print("Initial Seat Status:", seat)
-
-#     # Assign an occupant to the seat
-#     seat.set_occupant("John")
-#     print("Seat Status after assigning occupant:", seat)
-
-# test_seat_methods()
-     
 class Table():
     """
     Represents a table with a specified capacity.
@@ -84,10 +72,3 @@ class Table():
             if seat.free:
                 count += 1
         return count
-
-# def test_table_methods():
-#     # # Create a table with 4 empty seats
-#     table = Table(4)
-#     print("Newly initialized table looks like this: ", table)
-
-# test_table_methods()
