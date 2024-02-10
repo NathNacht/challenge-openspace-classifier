@@ -1,10 +1,12 @@
 # Open space organizer
+
+Our company moved to a new office. It's an openspace with a default setup of 6 tables that have each 4 seats (24 seats in total).
+
+The company consists out of a team of new colleagues, so we came up with the idea of changing seats everyday to get to know each other better by working side by side with new colleagues.
+
 This project contains an algorithm that randomly assign people to a spot in the openspace.
 
-The default setup of the open space is 6 tables of 4 seats → 24 seats.
-
 # Workflow
-
 
 ## High level flow chart:
 
@@ -23,7 +25,8 @@ graph TD;
     A[randomize list of names] --> B[For name in names]
     B --> C[For table in tables]
     C --> D{"table.has_free_spots()"}
-    D -- NO --> E[END]
+    D -- NO --> E[Next table]
+    E --> D
     D -- YES --> F["table.assign_seat_name()"]
 ```
 
