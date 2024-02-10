@@ -14,6 +14,8 @@ class Openspace():
         """ 
         For each random name in names a check is done if there is a free spot on a table.
         If there is a free spot, a name is assigned to a seat
+
+        :param names: list of names
         """
         random.shuffle(names)
         for name in names:
@@ -36,6 +38,8 @@ class Openspace():
         """
         Generates a list_of_tuples (tableid, seatid, name)
         call file_utils.write_csv(list_of_tuples, headernames, path)
+
+        :param output_path: path to the csv file
         """
         tuple_for_csv = [("TableID", "SeatID", "Name")]
         for i, table in enumerate(self.tables, start=1):

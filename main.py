@@ -1,6 +1,5 @@
 from utils.openspace import Openspace
 from utils.file_utils import read_input_file
-from utils.file_utils import write_to_csv
 
 def main():
     """ 

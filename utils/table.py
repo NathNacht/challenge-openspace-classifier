@@ -5,6 +5,9 @@ class Seat():
     def __init__(self, free: bool, occupant: str):
         """ free (bool): Indicates whether the seat is currently unoccupied (True) or occupied (False).
         occupant (str): The name of the occupant of the seat. Empty string if the seat is unoccupied.
+
+        :param free: Indicates whether the seat is currently unoccupied (True) or occupied (False).
+        :param occupant: The name of the occupant of the seat. Empty string if the seat is unoccupied.
         """
         self.free = free
         self.occupant = occupant
@@ -18,6 +21,8 @@ class Seat():
     def set_occupant(self, name):
         """ sets the occupant of the seat to the specified name and
         updates the free status accordingly
+
+        :param name: name of the occupant
         """
         self.occupant = name
         self.free = False
@@ -35,6 +40,8 @@ class Table():
     def __init__(self, capacity:int):
         """ capacity (int): The maximum number of seats the table can accommodate.
         seats (list): A list containing Seat objects representing the seats of the table.
+
+        :param capacity: The maximum number of seats the table can accommodate.
         """
         self.capacity = capacity
         # Initialize seats as a list containing Seat objects with specified capacity
@@ -47,6 +54,8 @@ class Table():
     def has_free_spot(self) -> bool:
         """       
         has_free_spot(): Checks if there is at least one free seat on the table.
+
+        :return: True if there is at least one free seat on the table, False otherwise.
         """
         for seat in self.seats:
             if seat.free:
@@ -56,6 +65,9 @@ class Table():
     def assign_seat_name(self, name):
         """
         assign_seat_name(name): Assigns the specified name to an available seat on the table.
+
+        :param name: name of the occupant
+        :return: True if a seat was assigned, False otherwise.
         """
         for seat in self.seats:
             if seat.free:
@@ -66,6 +78,8 @@ class Table():
     def left_capacity(self) -> int:
         """
         left_capacity(): Returns the number of free seats remaining on the table.
+
+        :return: The number of free seats remaining on the table.
         """
         count = 0
         for seat in self.seats:
