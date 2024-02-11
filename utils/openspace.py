@@ -7,8 +7,10 @@ class Openspace():
         self.tables = [Table(capacity=4) for _ in range(number_of_tables)]
         self.number_of_tables = number_of_tables
 
+
     def __str__(self) -> str:
         return "\n".join(str(table) for table in self.tables)
+
 
     def organize(self, names):
         """ 
@@ -18,22 +20,38 @@ class Openspace():
         :param names: list of names
         """
         random.shuffle(names)
-        for name in names:
+        free_seat_count = sum(table.left_capacity() for table in self.tables)
+        unassigned_names = []
+
+        if free_seat_count < len(names):
+            unassigned_names = names[free_seat_count:]
+            assignable_names = names[:free_seat_count]
+            print(f"Unassigned names: {unassigned_names}")
+            print()  # Empty line between tables
+        else:
+            assignable_names = names
+        
+        for name in assignable_names:
             for table in self.tables:
                 if table.has_free_spot():
                     table.assign_seat_name(name)
                     break  # Move to the next name once assigned
-        
+
+
     def display(self):
         """
         Displays the current state of the tables.
         """
+
         for i, table in enumerate(self.tables, start=1):
             print(f"Table {i}:")
             for j, seat in enumerate(table.seats, start=1):
                 print(f"Seat {j}: {'Occupied by: ' + seat.occupant if not seat.free else 'Empty'}")
+
             print()  # Empty line between tables
+
         print(f"Number of seats left: {sum(table.left_capacity() for table in self.tables)}")
+
 
     def store(self, output_path):
         """
@@ -42,6 +60,7 @@ class Openspace():
 
         :param output_path: path to the csv file
         """
+
         tuple_for_csv = [("TableID", "SeatID", "Name")]
         for i, table in enumerate(self.tables, start=1):
             for j, seat in enumerate(table.seats, start=1):

@@ -15,7 +15,7 @@ def main():
         input_file = "new_colleagues.txt"
         print("As you did not specify any input file, the default one will be used: " + input_file)
         print("In case you want to use your own inputfile, place it under the data folder and provide the filename as an argument")
-    
+        print()  # Empty line between tables
         
     input_file_path = "./data/" + input_file
     input_names = read_input_file(input_file_path)
@@ -31,6 +31,7 @@ def main():
     openspace.store(output_file)
 
     print("The organized openspace has been saved to: " + output_file)
+    print()  # Empty line between tables
   
 if __name__ == "__main__":
     main()
