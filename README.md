@@ -40,7 +40,9 @@ graph TD;
 $ python3 main.py
 ```
 
-* you will be asked to type the filename of the txt file that contains the names of the people in the openspace. In case you did not create your own file, `new_colleagues.txt` should be typed.
+* You can use your own file that you store in the data folder. Each name should be on a new line.
+* In case you want to use your own file, you are able to provide a filename as an argument. 
+* In case you do not supply a filename, the defaultfile will be used: `./data/new_colleagues.txt`
 
 ### Result
 Find the result in the organized_openspace.csv file in the data folder.
