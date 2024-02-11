@@ -62,7 +62,7 @@ class Table():
                 return True
         return False
 
-    def assign_seat_name(self, name):
+    def assign_seat_name(self, name) -> bool:
         """
         assign_seat_name(name): Assigns the specified name to an available seat on the table.
 

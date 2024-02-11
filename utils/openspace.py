@@ -23,7 +23,7 @@ class Openspace():
                 if table.has_free_spot():
                     table.assign_seat_name(name)
                     break  # Move to the next name once assigned
-
+        
     def display(self):
         """
         Displays the current state of the tables.
@@ -35,7 +35,7 @@ class Openspace():
             print()  # Empty line between tables
         print(f"Number of seats left: {sum(table.left_capacity() for table in self.tables)}")
 
-    def export_to_csv(self, output_path):
+    def store(self, output_path):
         """
         Generates a list_of_tuples (tableid, seatid, name)
         call file_utils.write_csv(list_of_tuples, headernames, path)
