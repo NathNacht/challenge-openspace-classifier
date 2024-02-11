@@ -33,6 +33,7 @@ class Openspace():
             for j, seat in enumerate(table.seats, start=1):
                 print(f"Seat {j}: {'Occupied by: ' + seat.occupant if not seat.free else 'Empty'}")
             print()  # Empty line between tables
+        print(f"Number of seats left: {sum(table.left_capacity() for table in self.tables)}")
 
     def export_to_csv(self, output_path):
         """
