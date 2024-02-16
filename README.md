@@ -1,5 +1,8 @@
 # Open space organizer
 
+[![forthebadge made-with-python](https://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
+
+
 Our company moved to a new office. It's an openspace with a default setup of 6 tables that have each 4 seats (24 seats in total).
 
 The company consists out of a team of new colleagues, so we came up with the idea of changing seats everyday to get to know each other better by working side by side with new colleagues.
